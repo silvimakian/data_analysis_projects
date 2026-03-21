@@ -20,5 +20,5 @@ This repository contains my data analysis projects demonstrating Python, SQL, Ta
    - Tools: Python, pandas, matplotlib, scikit learn
    
 4. **Recommendation System (TF-IDF)**  
-   Content-based recommendation system built to suggest items based on text similarity.  
-   Tools: Python, scikit-learn, pandas 
+   - Content-based recommendation system built to suggest items based on text similarity.  
+   - Tools: Python, scikit-learn, pandas 
