@@ -1,0 +1,118 @@
+import pandas as pd
+import numpy as np
+import sqlite3
+from collections import Counter
+
+df=pd.read_csv("data.csv", encoding='iso-8859-1')
+num_of_nulls=df.isnull().sum()
+#1454 (0.002%) nulls in the description category and 135080 (approximately 25% ) in customerID
+
+
+words = " ".join(df['Description'].dropna()).split()
+mostcommonwords=Counter(words).most_common(30)
+
+#Rows with missing product descriptions (0.002% of total data) were removed as they represent a negligible portion of transactions and prevent product-level analysis.
+total_duplicates=df.duplicated(subset=df.columns).sum()
+#5268 duplicates, so its safe to remove them 
+
+total_rows=len(df)
+duplicate_rows=df.duplicated().sum()
+duplicate_percent=duplicate_rows/total_rows * 100
+#approximately 1% of our dataset consisted of duplicates
+
+df['Revenue']=df["Quantity"]*df["UnitPrice"]
+duplicate_revenue=df[df.duplicated()]['Revenue'].sum()
+total_revenue=df["Revenue"].sum()
+rev_percent=duplicate_revenue/total_revenue * 100
+#duplicates account for only 0.22% of revenue
+
+df = df.drop_duplicates()
+#5,268 fully duplicated rows (~1% of dataset) were removed to prevent double-counting revenue. These duplicates represented 0.22% of total revenue.
+
+#categorizing based on product descriptions
+category_map = {
+    "Bags & Storage": ["BAG", "CASE", "BOX", "COVER", "BOTTLE"],
+    
+    "Home Decor/Garden Utility": ["SIGN", "BUNTING", "HEART", "DECORATION", 
+                   "WICKER", "BOARD", "BLOCK", "KNEELING PAD", "DOORMAT", "COAT RACK", "FRAME", "WOOD", "BLACK BOARD", "BUILDING BLOCK WORD"],
+    
+    "Kitchen & Dining": ["BOWL", "MUG", "SAUCER", "CUTLERY", 
+                         "PANTRY", "CREAM", "TEACUP", "JELLY", 
+                         "MOULD", "COOKIE", "CUTTER", "CAKESTAND", "TEA SET", "BAKING SET", "COOKIE CUTTER", "JAM", "JELLY"],
+    
+    "Lighting": ["CANDLE", "LIGHT", "LIGHTS", "HOLDER", 
+                 "LED", "NIGHT"],
+    
+    "Clocks": ["CLOCK", "ALARM", "ALARM CLOCK", "CLOCK", "BAKELIKE"],
+    
+    "Seasonal": ["CHRISTMAS"],
+    
+    "Textiles & Comfort": ["BOTTLE", "DOORMAT", "PAD"],
+    
+    "Party & Paper": ["CARD", "TISSUE", "RIBBON"],
+    
+    "Kids / Themed": ["SPACEBOY", "SUKI", "PAISLEY", "BIRD ORNAMENT", "PLASTERS", "WOODLAND", 
+                      "POLKADOT", "GIRL", "ANIMAL"],
+    "Non-Product": ["POSTAGE", "DOTCOM", "SHOPPER"]
+}
+
+def categorize(desc):
+    if pd.isna(desc):
+        return "Other"
+    
+    desc = str(desc).upper()
+    
+    for category, keywords in category_map.items():
+        for word in keywords:
+            if word in desc:
+                return category
+    return "Other"
+
+df["Category"] = df["Description"].apply(categorize)
+print(df["Category"].value_counts(normalize=True) * 100)
+
+c_count=df['InvoiceNo'].str.startswith('C').sum()
+#9251 invoices start with a c, meaning they were cancelled 
+df=df[~df['InvoiceNo'].str.startswith('C')]
+
+
+
+neg_count=(df['Quantity']<0).sum()
+#we have 10587 negative quantities
+df = df[df['Quantity'] > 0]
+
+
+
+unit_count=(df['UnitPrice']<0).sum()
+#only two negative unit prices
+df = df[df['UnitPrice'] > 0]
+
+#Turning invoice date into date time type
+df['InvoiceDate']=pd.to_datetime(df['InvoiceDate'])
+df['Month']=df['InvoiceDate'].dt.to_period('M').astype(str)
+
+#connecting SQL to Python
+conn=sqlite3.connect('ecommerce.db')
+df.to_sql('sales', conn, if_exists='replace', index=False)
+conn.close()
+
+
+conn = sqlite3.connect('ecommerce.db')
+
+with open('analysis.sql', 'r') as f:
+    sql_queries = f.read()
+
+queries = [q.strip() for q in sql_queries.split(';') if q.strip()]
+
+
+for i, query in enumerate(queries, 1):
+    df_result = pd.read_sql(query, conn)
+    print(f"Query {i} results:")
+    print(df_result, '\n')  
+
+#creating a new polished dataset
+df.to_csv('cleaned_ecommerce.csv', index=False)
+df.sample(n=1000).to_csv("clesned_ecommerce.csv", index=False)
+
+
+
