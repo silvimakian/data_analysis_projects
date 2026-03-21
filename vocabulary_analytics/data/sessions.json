@@ -1,0 +1,209 @@
+
+[
+    {
+        "date": "2026-03-14 13:47:20",
+        "book": "russian.json",
+        "accuracy": 0.67,
+        "mistakes": 3,
+        "correct": 6,
+        "longest_correct_streak": 4,
+        "longest_mistake_streak": 2,
+        "session_size": 9,
+        "duration_seconds": 53.75
+    },
+    {
+        "date": "2026-03-14 20:56:22",
+        "book": "spanish.json",
+        "accuracy": 0.88,
+        "mistakes": 1,
+        "correct": 7,
+        "longest_correct_streak": 6,
+        "longest_mistake_streak": 1,
+        "session_size": 8,
+        "duration_seconds": 32.08
+    },
+    {
+        "date": "2026-03-15 09:06:58",
+        "book": "spanish.json",
+        "accuracy": 0.75,
+        "mistakes": 2,
+        "correct": 6,
+        "longest_correct_streak": 4,
+        "longest_mistake_streak": 1,
+        "session_size": 8,
+        "duration_seconds": 42.33
+    },
+    {
+        "date": "2026-03-15 11:47:17",
+        "book": "spanish.json",
+        "accuracy": 0.88,
+        "mistakes": 1,
+        "correct": 7,
+        "longest_correct_streak": 5,
+        "longest_mistake_streak": 1,
+        "session_size": 8,
+        "duration_seconds": 27.72,
+        "words_stats": [
+            {
+                "word": "la pelicua",
+                "translation": "movie",
+                "weight": 1,
+                "total_correct": 6,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "perro",
+                "translation": "dog",
+                "weight": 1,
+                "total_correct": 9,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "hola",
+                "translation": "hello",
+                "weight": 1,
+                "total_correct": 3,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "hola",
+                "translation": "hello",
+                "weight": 1,
+                "total_correct": 4,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "hola",
+                "translation": "hello",
+                "weight": 1,
+                "total_correct": 5,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "padre",
+                "translation": "father",
+                "weight": 3,
+                "total_correct": 1,
+                "total_mistakes": 1,
+                "last_result": "wrong"
+            },
+            {
+                "word": "padre",
+                "translation": "father",
+                "weight": 2,
+                "total_correct": 2,
+                "total_mistakes": 1,
+                "last_result": "correct"
+            },
+            {
+                "word": "padre",
+                "translation": "father",
+                "weight": 1,
+                "total_correct": 3,
+                "total_mistakes": 1,
+                "last_result": "correct"
+            }
+        ]
+    },
+    {
+        "date": "2026-03-15 11:49:01",
+        "book": "russian.json",
+        "accuracy": 0.78,
+        "mistakes": 2,
+        "correct": 7,
+        "longest_correct_streak": 5,
+        "longest_mistake_streak": 2,
+        "session_size": 9,
+        "duration_seconds": 81.38,
+        "words_stats": [
+            {
+                "word": "дом",
+                "translation": "house",
+                "weight": 1,
+                "total_correct": 4,
+                "total_mistakes": 1,
+                "last_result": "correct"
+            },
+            {
+                "word": "привет",
+                "translation": "hello",
+                "weight": 1,
+                "total_correct": 2,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "кошка",
+                "translation": "cat",
+                "weight": 5,
+                "total_correct": 0,
+                "total_mistakes": 2,
+                "last_result": "wrong"
+            },
+            {
+                "word": "студент",
+                "translation": "student",
+                "weight": 3,
+                "total_correct": 0,
+                "total_mistakes": 1,
+                "last_result": "wrong"
+            },
+            {
+                "word": "мир",
+                "translation": "world",
+                "weight": 1,
+                "total_correct": 3,
+                "total_mistakes": 0,
+                "last_result": "correct"
+            },
+            {
+                "word": "кошка",
+                "translation": "cat",
+                "weight": 4,
+                "total_correct": 1,
+                "total_mistakes": 2,
+                "last_result": "correct"
+            },
+            {
+                "word": "студент",
+                "translation": "student",
+                "weight": 2,
+                "total_correct": 1,
+                "total_mistakes": 1,
+                "last_result": "correct"
+            },
+            {
+                "word": "спасибо",
+                "translation": "thank you",
+                "weight": 2,
+                "total_correct": 1,
+                "total_mistakes": 1,
+                "last_result": "correct"
+            },
+            {
+                "word": "спасибо",
+                "translation": "thank you",
+                "weight": 1,
+                "total_correct": 2,
+                "total_mistakes": 1,
+                "last_result": "correct"
+            }
+        ]
+    },
+    {
+        "date": "2026-03-15 12:03:21",
+        "book": "spanish.json",
+        "accuracy": 1.0,
+        "mistakes": 0,
+        "correct": 8,
+        "longest_correct_streak": 8,
+        "longest_mistake_streak": 0,
+        "session_size": 8,
+        "time_seconds": 40
+    }
+]
