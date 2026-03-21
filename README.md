@@ -18,3 +18,7 @@ This repository contains my data analysis projects demonstrating Python, SQL, Ta
 3. **Vocabulary Practice and Analytics System**  
    - Analyzing vocabulary learning trends and generating insights  
    - Tools: Python, pandas, matplotlib, scikit learn
+   
+4. **Recommendation System (TF-IDF)**  
+   Content-based recommendation system built to suggest items based on text similarity.  
+   Tools: Python, scikit-learn, pandas 
