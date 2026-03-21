@@ -1,0 +1,53 @@
+--Top 10 products by revenue( including their unit price)
+SELECT 
+    Category, 
+    AVG(UnitPrice) AS AvgPrice,
+    SUM(Quantity) AS TotalQuantity,
+    SUM(Quantity*UnitPrice) AS Revenue
+FROM sales
+GROUP BY Category
+ORDER BY Revenue DESC
+LIMIT 10;
+
+-- Monthly revenue trend
+SELECT Month, SUM(Quantity*UnitPrice) AS Revenue
+FROM sales
+GROUP BY Month
+ORDER BY Month;
+
+-- Top 10 customers by revenue
+SELECT 
+    CustomerID,
+    COUNT(DISTINCT InvoiceNo) AS Orders,
+    SUM(Quantity*UnitPrice) AS Revenue
+FROM sales
+GROUP BY CustomerID
+ORDER BY Revenue DESC
+LIMIT 10;
+
+--Top 10 most expensive products
+SELECT 
+    Description,
+    MAX(UnitPrice) AS MaxPrice
+FROM sales
+GROUP BY Category
+ORDER BY MaxPrice DESC
+LIMIT 10;
+
+--Most popular items by customer count
+SELECT 
+    Description, Category,
+    COUNT(DISTINCT CustomerID) AS UniqueCustomers,
+    SUM(Quantity) AS TotalUnitsSold,
+    SUM(Quantity*UnitPrice) AS Revenue
+FROM sales
+GROUP BY Category
+ORDER BY UniqueCustomers DESC;
+
+--Revenue growth by product
+SELECT 
+    Month,
+    Category,
+    SUM(Quantity*UnitPrice) AS Revenue
+FROM sales
+GROUP BY Month, Category;
