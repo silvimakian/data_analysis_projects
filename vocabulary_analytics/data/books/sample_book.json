@@ -1,0 +1,58 @@
+[
+    {
+        "word": "perro",
+        "translation": "dog",
+        "correct": 9,
+        "mistakes": 0,
+        "weight": 1
+    },
+    {
+        "word": "la pelicua",
+        "translation": "movie",
+        "correct": 6,
+        "mistakes": 0,
+        "weight": 1
+    },
+    {
+        "word": "leche",
+        "translation": "milk",
+        "correct": 5,
+        "mistakes": 1,
+        "weight": 2
+    },
+    {
+        "word": "padre",
+        "translation": "father",
+        "correct": 4,
+        "mistakes": 1,
+        "weight": 1
+    },
+    {
+        "word": "madre",
+        "translation": "mother",
+        "correct": 6,
+        "mistakes": 0,
+        "weight": 1
+    },
+    {
+        "word": "hola",
+        "translation": "hello",
+        "correct": 6,
+        "mistakes": 0,
+        "weight": 1
+    },
+    {
+        "word": "gracias",
+        "translation": "thank you",
+        "correct": 1,
+        "mistakes": 1,
+        "weight": 2
+    },
+    {
+        "word": "mucho",
+        "translation": "many",
+        "correct": 5,
+        "mistakes": 1,
+        "weight": 1
+    }
+]
