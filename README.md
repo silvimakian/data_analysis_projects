@@ -1,2 +1,20 @@
 # data_analysis_projects
 Portfolio of data analysis projects showcasing Python, SQL, and Tableau skills.
+
+# Junior Data Analyst Portfolio
+
+This repository contains my data analysis projects demonstrating Python, SQL, Tableau, and data visualization skills. Projects include backend data processing, exploratory data analysis, and actionable insights.
+
+## Projects
+
+1. **Customer Segmentation (RFM + Clustering)**  
+   - Segmenting customers based on purchasing behavior  
+   - Tools: Python, SQL, Tableau  
+
+2. **E-commerce Sales Analysis**  
+   - Analyzing top-selling products and revenue trends  
+   - Tools: Python, SQL, Tableau  
+
+3. **Vocabulary Practice and Analytics System**  
+   - Analyzing vocabulary learning trends and generating insights  
+   - Tools: Python, pandas, matplotlib, scikit learn
