@@ -1,8 +1,5 @@
 # data_analysis_projects
-Portfolio of data analysis projects showcasing Python, SQL, and Tableau skills.
-
-# Junior Data Analyst Portfolio
-
+Data analysis projects showcasing Python, SQL, and Tableau skills.
 This repository contains my data analysis projects demonstrating Python, SQL, Tableau, and data visualization skills. Projects include backend data processing, exploratory data analysis, and actionable insights.
 
 ## Projects
